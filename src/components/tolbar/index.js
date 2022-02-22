@@ -17,20 +17,19 @@ function Home() {
 <List 
 sx={{width: '100%', maxWidth: 200, bgcolor: 'background.paper' }}
 aria-label="contacts">
-    {[{name:'Perfil',icon:<AccountCircleIcon htmlColor=" #4ba0ee"/>,link:"/"},
+    {[{name:'Perfil',icon:<AccountCircleIcon htmlColor=" #4ba0ee"/>,link:"/perfil"},
     {name:'Chamados',icon:<InboxIcon htmlColor=" #4ba0ee" />,
-    link:"/home"}].map(item=>(
+    link:"/chamados"}].map(item=>(
+        <Link to={`${item.link}`} className="link-menu" >
        <ListItem disablePadding>
-           <Link to={`${item.link}`} className="link-menu" >
             <ListItemButton>
             <ListItemIcon>
              {item.icon}
             </ListItemIcon>
             <ListItemText primary={`${item.name}`} /> 
-        </ListItemButton >
-        </Link>
+            </ListItemButton >
         </ListItem >
-       
+        </Link>       
         ))}
 </List>
 </>

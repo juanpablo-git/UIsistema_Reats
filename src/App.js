@@ -5,11 +5,10 @@ import {
   Link,
   Routes
 } from "react-router-dom";
-import './App.css';
 import Login from'./components/login'
 import ToolBar from './components/tolbar'
-import Home from './components/Home'
-
+import Chamados from './components/Chamados'
+import Perfil from './components/Perfil'
 
 function App() {
   return (
@@ -18,7 +17,8 @@ function App() {
     <ToolBar />
     <Routes>
     <Route path="/" element={<Login />} />
-    <Route path="/home" element={<Home />} />
+    <Route path="/perfil" element={<Perfil/>}/>
+    <Route path="/chamados" element={<Chamados />} />
     </Routes>
     </div>
     </BrowserRouter>

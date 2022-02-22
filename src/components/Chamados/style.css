@@ -1,0 +1,7 @@
+.element{
+    font-weight: bold;
+}
+.teste{
+    display: flex;
+    justify-content: 'flex-end';
+}
