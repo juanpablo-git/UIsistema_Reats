@@ -1,5 +1,7 @@
 class Api {
-    constructor(URL)
+    constructor(URL){
+        const URL = this.URL
+    }
      static async  getChamados(){
 
     }

@@ -42,10 +42,6 @@ const columns = [
   },
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
-}
 
 const rows = [
     {
@@ -55,7 +51,7 @@ const rows = [
         "dataInicio": "2021-09-10T09:10:02.000Z",
         "dataFim": null,
         "solucao": null,
-        "descricao": "● SUBDESCRIÇÂO: \n\n● Criação de e-mail",
+        "descricao": `\n ● SUBDESCRIÇÂO: \n \n● Criação de e-mail`,
         "idTipoProblema": 52,
         "titulo": null,
         "nivel_atendimento": 1,
@@ -383,6 +379,7 @@ export default function StickyHeadTable() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [drawer,setDrawer] = React.useState(false)
+  const [idInfo,setIDinfo] = React.useState([])
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -418,7 +415,11 @@ export default function StickyHeadTable() {
                 return (
                   <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                     {columns.map((column) => {
-                        if(column.label === 'Detalhes') row[column.id] =<InfoIcon onClick={()=>setDrawer(true)}/>
+                        if(column.label === 'Detalhes') row[column.id] =<InfoIcon onClick={()=>{
+                          setDrawer(true)
+                          setIDinfo(row.idChamado)
+
+                        }}/>
                       const value = row[column.id];
                       
                       return (
@@ -446,7 +447,7 @@ export default function StickyHeadTable() {
       />
     </Paper>
     <Drawer anchor={'right'} open={drawer} onClose={()=>setDrawer(false)}>
-      <Drawwer />
+      <Drawwer id={{idInfo}} detalhes={{rows}}/>
     </Drawer>
     </>
   );
