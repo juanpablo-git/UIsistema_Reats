@@ -8,7 +8,7 @@ function login() {
 
         <div className='container-left'></div>
         <div className='container-right'>
-          <form action='/home'>
+          <form action='/perfil'>
             <label from="email">Email:</label>
             <input type="text" name="email"placeholder='digite seu email'/>
             <label from="senha">Senha:</label>

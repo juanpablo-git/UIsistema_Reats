@@ -1,5 +1,7 @@
 import React,{useState}from 'react';
-import {Box,List,ListItem,ListItemText}from '@mui/material';
+import {Box,List,ListItem,ListItemText,Button}from '@mui/material';
+import ButtonGroup from '@mui/material/ButtonGroup';
+
 
 function informacaoChamados({id,detalhes}) {
  
@@ -14,11 +16,23 @@ function informacaoChamados({id,detalhes}) {
         </ListItem>
 
         <ListItem>
-        <ListItemText primary="Fila:" secondary={`${listaDrawer[0].problema}`} />
+          <ListItemText primary="Fila:" secondary={`${listaDrawer[0].problema}`} />
         </ListItem>
         <ListItem>
-        <ListItemText primary="Descrição:" secondary={`${listaDrawer[0].descricao}`} />
+          <ListItemText primary="Descrição:" secondary={`${listaDrawer[0].descricao}`} />
         </ListItem>
+        <ListItem>
+          <ListItem>
+          <Button variant="contained" >Atender</Button>
+          </ListItem>
+          <ListItem>
+          <Button variant="contained" >Transferir</Button>
+          </ListItem>  
+          <ListItem>
+          <Button variant="contained" >Classificar </Button>
+          </ListItem>    
+        </ListItem>
+
       </List>
     </Box>
     

@@ -1,5 +1,5 @@
-import {Container,Box,Paper,
-        List} from '@mui/material';
+import {Container,Box,Paper,                                                      
+        List,ListItem,ListItemText  } from '@mui/material';
 export default ()=>{
     return (
         <Container>
@@ -12,7 +12,23 @@ export default ()=>{
         },}}>
            <Paper elevation={2}>
                <List>
-               Em Andamento
+
+                <ListItem>
+                <ListItemText primary="Chamados" />
+                </ListItem>
+
+                <ListItem>
+                <ListItemText secondary="Em andamento: 3" />
+                </ListItem>
+
+                <ListItem>
+                <ListItemText secondary="Finalizados: 0" />
+                </ListItem>
+
+                <ListItem>
+                <ListItemText secondary="Pendentes: 100" />
+                </ListItem>
+              
                </List>
            </Paper>
            </Box>
