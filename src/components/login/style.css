@@ -1,3 +1,6 @@
+*{
+    margin: 0;
+}
 .container-login{
     display:flex;
     height:100vh;
