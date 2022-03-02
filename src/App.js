@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect,useContext, useState} from "react";
 import {
   BrowserRouter,
   Switch,
@@ -8,30 +8,18 @@ import {
 } from "react-router-dom";
  import Login from'./components/login'
  import ToolBar from './components/tolbar'
- import Api from './api/index'
-// import Chamados from './components/Chamados'
-// import Perfil from './components/Perfil'
+import {Context,Hystory} from './api/context'
+
 import Rota from "./routes"
-
-export const log = false
 function App() {
-  
+ const {logado,setLogado}= useContext(Context)
 
-
- if(log){
-  return ( <Rota/> ) 
+ if(logado){
+  return  <Rota/> 
  }else{
-   return <Login/>
+   return  <Login/> 
  }
     
-    // <BrowserRouter>
-    // <div style={{display:"flex",flexDirection:"row"}}>
-    // <ToolBar />
-    // <Routes>
-    // <Rota />
-    // </Routes>
-    // </div>
-    // </BrowserRouter>
   
   
 }

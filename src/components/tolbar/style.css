@@ -1,3 +1,11 @@
 .link-menu{
-    
+    text-decoration: none;
+}
+.link-menu:hover{
+    text-decoration: none;
+    color: "#fafafa";
+}
+.link-menu::after{
+    text-decoration: none;
+    color: "white";
 }

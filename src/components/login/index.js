@@ -1,7 +1,10 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import './style.css'
-import {log} from "../../App"
-function login() {
+import {Context} from "../../api/context"
+function Login() {
+ 
+  const {logado,setLogado} = useContext(Context)
+  
   return (
     <div className='container-login'>
 
@@ -9,12 +12,18 @@ function login() {
 
         <div className='container-left'></div>
         <div className='container-right'>
-          <form action="/" >
+          <form onSubmit={(e)=>{
+            e.preventDefault()
+           setLogado(true)
+           
+
+           
+          }} >
             <label from="email">Email:</label>
             <input type="text" name="email"placeholder='digite seu email'/>
             <label from="senha">Senha:</label>
             <input type="password" name="senha" placeholder="digite sua senha"/>
-            <button onClick={()=> log = true}>Login</button>
+            <button >Login</button>
           </form>
         </div>
 
@@ -24,4 +33,4 @@ function login() {
   );
 }
 
-export default login;
+export default Login;

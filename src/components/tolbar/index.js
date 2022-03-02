@@ -10,7 +10,7 @@ import "./style.css"
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import InboxIcon from '@mui/icons-material/Inbox';
 
-import { Link} from "react-router-dom"
+import { NavLink} from "react-router-dom"
 function Home() {
     return(
 <>
@@ -20,7 +20,11 @@ aria-label="contacts">
     {[{name:'Perfil',icon:<AccountCircleIcon htmlColor=" #4ba0ee"/>,link:"/perfil"},
     {name:'Chamados',icon:<InboxIcon htmlColor=" #4ba0ee" />,
     link:"/chamados"}].map(item=>(
-        <Link to={`${item.link}`} className="link-menu" >
+       <NavLink to={item.link}
+       style={isActive => ({
+        color:"black",
+       textDecoration:"none"
+      })}>
        <ListItem disablePadding>
             <ListItemButton>
             <ListItemIcon>
@@ -29,7 +33,8 @@ aria-label="contacts">
             <ListItemText primary={`${item.name}`} /> 
             </ListItemButton >
         </ListItem >
-        </Link>       
+        </NavLink>
+           
         ))}
 </List>
 </>
