@@ -1,4 +1,4 @@
-import React,{useEffect,useContext, useState} from "react";
+import React,{useContext } from "react";
 import {
   BrowserRouter,
   Switch,
@@ -7,7 +7,6 @@ import {
   Routes
 } from "react-router-dom";
  import Login from'./components/login'
- import ToolBar from './components/tolbar/index1'
 import {Context,Hystory} from './api/context'
 
 import Rota from "./routes"

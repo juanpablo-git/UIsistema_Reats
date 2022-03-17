@@ -10,6 +10,7 @@ import {
 import Chamados from './components/Chamados'
 import Perfil from './components/Perfil'
 import ToolBar from './components/tolbar/index'
+import Teste from "./components/teste"
 
 
 
@@ -20,7 +21,9 @@ export default ()=>{
         <div style={{display:"flex",flexDirection:"row"}}>
         <ToolBar/>
         <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Chamados />} />
+        <Route path="/teste" element={<Teste />} />
+
         <Route path="/perfil" element={<Perfil/>}/>
         <Route path="/chamados" element={<Chamados />} />
         </Routes>
